@@ -7,9 +7,10 @@
         <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
     </head>
     <body>
-        <h3> Please edit the according values as you intend. </h3>
+        <h3>Please edit the according values as you intend.</h3>
+        
         <?php $partnerData = getPartnerByID($pdo, $_GET['partner_id']) ?>
-        <form action="core/handleForms.php?partner_id   =<?php echo $_GET['partner_id']; ?>" method="POST">
+        <form action="core/handleForms.php?partner_id=<?php echo $_GET['partner_id']; ?>" method="POST">
             <label for="first_name">First name:</label>
             <input type="text" name="first_name" id="first_name" value="<?php echo $partnerData['first_name']; ?>"> <br>
 

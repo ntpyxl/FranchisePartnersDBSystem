@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
     </head>
     <body>
+        <h2>Welcome to ntpxl's Franchising Partners! Enter below your details to become a partner!</h2>
         
         <form action="core/handleForms.php" method="POST">
             <label for="first_name">First name</label>
@@ -37,6 +38,7 @@
             <input type="submit" name="addPartnerButton" value="Add partner">
         </form> <br>
 
+        <h3>Our partners and their franchises!</h3>
         <table>
             <tr>
                 <th>Partner ID</th>
@@ -61,8 +63,8 @@
                 <td><?php echo $row['birthdate']?></td>
                 <td><?php echo $row['home_address']?></td>
                 <td><?php echo $row['date_registered']?></td>
-                <td>
-                    <input type="submit" value="Add Franchise" onclick="window.location.href='addFranchise.php?partner_id=<?php echo $row['partner_id']; ?>';">
+                <td style="max-width: 350px;">
+                    <input type="submit" value="View Franchises" onclick="window.location.href='viewPartnerFranchises.php?partner_id=<?php echo $row['partner_id']; ?>';">
                     <input type="submit" value="Edit Partner" onclick="window.location.href='editPartner.php?partner_id=<?php echo $row['partner_id']; ?>';">
                     <input type="submit" value="Remove Partner" onclick="window.location.href='removePartner.php?partner_id=<?php echo $row['partner_id']; ?>';">
                 </td>
